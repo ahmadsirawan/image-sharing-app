@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/logo3.png">
+
+    <title>COFFEE SHARE</title>
+
+    <!-- Font from Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!-- FontAwesome Library of icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <!-- Dropzone.js Library for the upload interface -->
+    <script src="js/dropzone.min.js"></script>
+    <link rel="stylesheet" href="css/dropzone.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/general.css">
+
+</head>
+
+<body>
+
+    <div class="lds-rippleContainer">
+        <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+    
+        <div class="navbar">
+            <div id="logo">
+           <a href="index.html"> <img src="images/logo3.png" alt=""></a>
+        </div>
+        <section id="greeting">
+        <h2></h2>
+        <div id="welcome" ></div>
+        
+    </section>
+
+            <section id="post">
+        <!--<h2>Drop image here</h2>-->
+        <i class="fas fa-times"></i>
+        <section id="drop">
+            <form id="myDropzone" class="dropzone" action="php/upload.php">
+            </form>
+        </section>
+        <script src="js/drop.js"></script>
+    </section>
+
+    
+        </div>
+    
+    <div id="wrapper">
+    
+
+    
+
+    <div class="flex">
+
+    <div class="logo-container">
+       <div id="logo-2">
+           <a href="index.html"> <img src="images/logo3.png" alt=""></a>
+        </div>
+        <h1>Welcome to Coffee Share</h1>
+        <h2>Share pictures of your drinks with The Coffee shop community!</h2>
+        </div>
+
+    <section id="login">
+        <h2>Log In</h2>
+        <form id="loginForm" action="" method="post" class="form">
+            <div class="form-control">
+                 <label> <input type="text" id="username" name="username" placeholder="Username" required ></label><small>Wrong Username</small>
+                 <div id="prompt"></div>
+             </div>
+             <div class="form-control">
+            <label> <input type="password" id="password" name="password" placeholder="Password" required></label><small>Wrong Password</small>
+            </div>
+            <input type="submit" value="Log In">
+        </form>
+
+        <p class="form-para">Need an account? <button id="signup-btn">Sign Up</button></p>
+        <script src="js/login.js"></script>
+    </section>
+  
+    <br>
+    
+    <div id="d"></div>
+
+
+    <section id="signup">
+    <h2>Sign Up</h2> <form id="signupForm" action=""
+    method="post" class="form">
+    <div class="form-control">
+        <label><input
+         type="text" id="username2" name="username" placeholder="Username"
+        required></label>
+        <p class="characters">(must be at least 3 characters)</p>
+        <small>Wrong Username</small>
+         </div>
+         <div
+        class="form-control">
+         <label><input type="password" id="password2" name="password"
+        placeholder="Password" required></label>
+        <p class="characters">(must be at least 6 characters)</p>
+        <small>Wrong Password</small>
+    </div>
+     <input type="submit" value="Sign Up"> </form>
+     <p class="form-para">Already a member? <button id="log-btn">Log in</button></p>
+      <script
+    src="js/insert_user.js"></script>
+    </section>
+
+    
+
+    </div>
+    <section id="gallery">
+        <h2>CUSTOMERS GALLERY</h2>
+       
+        <div id="galleryContainer">
+           
+        </div>
+    </section>
+
+
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/select_images.js"></script>
+    <script src="js/select_single.js"></script>
+    <script src="js/insert_comment.js"></script>
+    <script src="js/select_comments.js"></script>
+    <script src="js/insert_like.js"></script>
+    <script src="js/select_likes.js"></script>
+    
+    <script src="js/own_likes.js"></script>
+    
+
+
+    
+
+</div><!--wrapper-->
+<script src="js/ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script>
+    $(window).on('load', function () {
+    
+    setTimeout(
+        function () { $('.lds-rippleContainer').fadeOut(1000);
+        gsap.from("#d", {
+    scrollTrigger: {
+        trigger: "#wrapper",
+        start: "top center",
+        toggleActions: "play none none resume"
+        
+
+
+    },
+    // y: 200,
+    
+    opacity: 0,
+    duration: 1.5,
+    // delay:1,
+    stagger: 0.2,
+    ease: Power0.easeNone
+
+
+
+});
+
+        gsap.from("#logo-2, .logo-container h1, .logo-container h2", {
+    scrollTrigger: {
+        trigger: "#wrapper",
+        start: "top center",
+        toggleActions: "play none none resume"
+        
+
+
+    },
+    // y: 200,
+    translateY: 200,
+    opacity: 0,
+    duration: 1,
+    // delay:1,
+    stagger: 0.2,
+    ease: Power0.easeNone
+
+
+
+});
+
+        gsap.from("#signup, #login", {
+    scrollTrigger: {
+        trigger: "#wrapper",
+        start: "top center",
+        toggleActions: "play none none resume"
+        
+
+
+    },
+    // y: 200,
+    translateY: -200,
+    opacity: 0,
+    duration: 1,
+    // delay:1,
+    stagger: 0.2,
+    ease: Power0.easeNone
+
+
+
+});
+            
+
+           
+            
+ }, 500);
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+
+gsap.from("#galleryContainer div", {
+    scrollTrigger: {
+        trigger: "#gallery",
+        start: "top center",
+        toggleActions: "play none none resume"
+        
+
+
+    },
+    translateY: 200,
+    opacity: 0,
+    duration: 1,
+    // delay:1,
+    stagger: 0.2,
+    ease: Power0.easeNone
+
+
+
+});
+})
+
+    
+
+  
+</script>
+
+</body>
+</html>
